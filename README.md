@@ -7,12 +7,6 @@ version:  3.0
 
 language: en
 
-script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
-          https://felixhao28.github.io/JSCPP/dist/JSCPP.es5.min.js
-
-import: https://raw.githubusercontent.com/LiaTemplates/algebrite/0.2.1/README.md 
-        https://raw.githubusercontent.com/liaTemplates/TextAnalysis/main/README.md
-
 -->
 # KONG API-GATEWAY
 
