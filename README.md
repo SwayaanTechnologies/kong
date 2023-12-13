@@ -1,23 +1,53 @@
-<!--
-author:   Dharmananda G
-
-email:    dharmananda@swayaan.com
-
-version:  3.0
-
-language: en
-
--->
 # KONG API-GATEWAY
 
-<hr>
 <br>
 <br>
 
 
-![kong logo](images/kong.jpg)<!--style="width:400%" -->
+![kong logo](images/kong.jpg)<!--style="width:70%" -->
 
-## Introduction to Kong APIGateway
+
+# Table of Contents
+
+<br>
+
+1. **[Introduction to Kong APIGateway](#introduction-to-kong-apigateway)**
+
+2. **[Why kong](#why-kong)**
+
+3. **[Kong Architecture](#kong-architecture)**
+
+4. **[Kong Features](#kong-features)**
+
+5. **[Kong Packages and modes](#kong-packages-and-modes)**
+
+6. **[Kong Gateway Modules And Concepts](#kong-gateway-modules-and-concepts)**
+
+7. **[Installation of Docker and Configuring Admin API (Hands on)](#installation-of-docker-and-configuring-admin-api-hands-on)**
+
+8. **[Configuring a Service in Admin API (Hands on)](#configuring-a-service-in-admin-api-hands-on)**
+
+9. **[API Request Flow and Plugins](#api-request-flow-and-plugins)**
+
+10. **[Enabling Monitoring in kong (OSS) with prometheus plugin and prometheus server (Hands on)](#enabling-monitoring-in-kong-oss-with-prometheus-plugin-and-prometheus-server-hands-on)**
+
+11. **[Kong Vitals](#kong-vitals)**
+
+12. **[OpenAPI](#openapi)**
+
+13. **[Imperative vs. Declarative](#imperative-vs-declarative)**
+
+14. **[Insomnia](#insomnia)**
+
+15. **[Introduction to APIOps](#introduction-to-apiops)**
+
+16. **[Deploying API Gateway Within a CI/CD Pipeline](#deploying-api-gateway-within-a-ci-cd-pipeline)**
+
+17. **[References](#references)**
+
+
+
+# Introduction to Kong APIGateway
 
 <br>
 
@@ -47,13 +77,13 @@ language: en
 * Move all Repeated logic outside the back end service
 * Add a proxy in front of API’s (API Gateway)
 
-### Software response to complex demand
+## Software response to complex demand
 
 <br>
 
 ![software response to complex demand](images/kong2.png)
 
-### Technology Evolution
+## Technology Evolution
 
 <br>
 
@@ -61,7 +91,7 @@ language: en
 
 
 
-## Why Kong?
+# Why Kong
 
 <br>
 
@@ -80,13 +110,13 @@ language: en
 * Also supports Enterprise edition and support for advanced use- case
 
 
-### Kong Example
+## Kong Example
 
 <br>
 
 ![kong example](images/kong4.png)
 
-### Kong Interaction
+## Kong Interaction
 
 <br>
 
@@ -96,7 +126,7 @@ language: en
 *   It also applies a common policy for each request and response no matter where the target service is.
 
 
-### Current Architecture vs Kong Architecture
+## Current Architecture vs Kong Architecture
 
 <br>
 
@@ -108,13 +138,13 @@ language: en
 * In current architecture, for each api's we need specify and add plugins like basic-authentication,loggging, caching and rate limiting.
 * In Kong architecture, there is a kong api gateway where this as all the plugins required by the api's where need not to add plugins for each api's.      
 
-### Enabling Microservice Architectures
+## Enabling Microservice Architectures
 
 <br>
 
 ![enabling microservice](images/kong8.png)
 
-### Kong Plugins
+## Kong Plugins
 
 <br>
 
@@ -126,7 +156,7 @@ language: en
 * Most of the plugins are free to use where as some of the plugins are available at enterprised version.
 * It Supports multiple installations options.     
 
-### Platform Agnostic
+## Platform Agnostic
 
 <br>
 
@@ -136,21 +166,21 @@ language: en
 * Kong is platform agnostic which means it can be installed and run in any platform like docker, kubernetes, amazon, ubuntu, debian etc..
 
 
-## Kong Architecture
+# Kong Architecture
 
 <br>
 
 ![kong architecture](images/kong13.png)   
 
 
-### Kong Internal Architecture 
+## Kong Internal Architecture 
 
 <br>
 
 ![kong architecture](images/kong14.png)
 
 
-### Kong Deployment Architecture
+## Kong Deployment Architecture
 
 <br>
 
@@ -162,21 +192,21 @@ language: en
 
 
 
-### Kong Supports Hybrid Architecture
+## Kong Supports Hybrid Architecture
 
 <br>
 
 ![kong architecture](images/kong17.png)
 
 
-### Kong supports Centralized or Decentralized    
+## Kong supports Centralized or Decentralized    
 
 <br>
 
 ![kong architecture](images/kong18.png)
 
 
-### Kong Features
+## Kong Features
 
 <br>
 
@@ -214,7 +244,7 @@ language: en
 ![kong Features](images/kong24.png)
 
 
-## Kong Packages and modes 
+# Kong Packages and modes 
     
 <!--style="font-size:20px" -->
  *  **Free** 
@@ -224,19 +254,19 @@ language: en
 
 
 
-### Community Edition
+## Community Edition
 
 ![kong Community Edition](images/kong25.png)
 
 
-### Enterprise Edition    
+## Enterprise Edition    
 
 ![kong Enterprise Edition](images/kong26.png)
 
 
-## Kong Gateway Modules And Concepts
+# Kong Gateway Modules And Concepts
 
-### Kong Gateway Modules  
+## Kong Gateway Modules  
 
 <br>
 
@@ -263,7 +293,7 @@ Here are some of the things you can do with Kong Manager:
 * Group your teams, services, plugins, consumer management, and everything else exactly how you want them
 * Monitor performance: visualize cluster-wide, workspace-level, or object-level health using intuitive, customizable dashboards.
 
-### Kong Gateway Concepts    
+## Kong Gateway Concepts    
     
 <br>
 
@@ -287,19 +317,19 @@ Here are some of the things you can do with Kong Manager:
 | User Authorization (RBAC) | Kong Gateway handles user authorization through role-based access control (RBAC). Once enabled, RBAC lets you create teams and admins and assign them granular permissions either within a workspace, or across workspaces.                        |   
 | Dev Portal                | The Dev Portal provides a single source of truth for all developers to locate, access, and consume        services. |    
 
-### Traffic Flow in Kong
+## Traffic Flow in Kong
 
 <br>
 
 ![kong Gateway Concepts](images/kong30.png)
 
-### Kong Admin API
+## Kong Admin API
 
 <br>
 
 ![kong Gateway Concepts](images/kong31.png)
 
-### Services and Routes
+## Services and Routes
 
 <br>
 
@@ -309,7 +339,7 @@ Here are some of the things you can do with Kong Manager:
 
  ![services and routes](images/kong32.png)
 
-### Admin API
+## Admin API
 
 <br>
     
@@ -322,7 +352,7 @@ This Hands-on Session will explain various component and functionality of the Ko
 * Implement an **Authentication** plugin, so the service requires an API Key
 * Create a **consumer** (i.e. a user) for the service with valid credentials
 
-#### Services
+### Services
 
 <br>
 
@@ -331,7 +361,7 @@ This Hands-on Session will explain various component and functionality of the Ko
 
  ![services](images/kong34.png)
 
-#### Routes
+### Routes
 
 <br>
 
@@ -341,7 +371,7 @@ This Hands-on Session will explain various component and functionality of the Ko
  ![routes](images/kong36.png)
 
 
-#### Plugins
+### Plugins
 
 <br>
 
@@ -350,7 +380,7 @@ This Hands-on Session will explain various component and functionality of the Ko
 
 ![plugins](images/kong38.png)
 
-#### Authentication
+### Authentication
 
 <br>
 
@@ -365,14 +395,14 @@ This Hands-on Session will explain various component and functionality of the Ko
     * LDAP Authentication Advanced
     * OpenID Connect
 
-#### Kong Plugin Hub 
+### Kong Plugin Hub 
 
 <br>
 
 ![Kong Plugin Hub](images/kong39.png)
 
 
-#### Consumer
+### Consumer
 
 <br>
 
@@ -382,7 +412,7 @@ This Hands-on Session will explain various component and functionality of the Ko
 ![Kong Plugin Hub](images/kong41.png)
 
 
-#### Proxy Caching
+### Proxy Caching
 
 <br>
 
@@ -403,7 +433,7 @@ This Hands-on Session will explain various component and functionality of the Ko
 | Bypass  | The request could not be satisfied from cache based on plugin configuration.                                                                       |
 
 
-### Installation of Docker and Configuring Admin API (Hands on)
+# Installation of Docker and Configuring Admin API - Hands on
 
 <br>
 
@@ -574,7 +604,7 @@ $ kong start
 ```
 
 
-### Configuring a Service in Admin API (Hands on)  
+# Configuring a Service in Admin API - Hands on  
                                 
 
 <!--style="font-size:20px" -->
@@ -691,7 +721,7 @@ curl http://localhost :8001/plugins
 curl -X DELETE http://localhost:8001/services/example-service/routes/<id-of-the-route>
 ```
 
-### API Request Flow and Plugins
+# API Request Flow and Plugins
 
 
 ![Kong Plugin Hub](images/kong42.png)
@@ -706,7 +736,7 @@ curl -X DELETE http://localhost:8001/services/example-service/routes/<id-of-the-
 ![Kong Plugin Hub](images/kong45.png)
 
 
-### API Request flow 
+## API Request flow 
 
 <br>
 
@@ -735,7 +765,7 @@ curl -X DELETE http://localhost:8001/services/example-service/routes/<id-of-the-
 ![Kong Plugin Hub](images/kong46.png)
 
 
-### Kong Manager
+## Kong Manager
 
 <br>
 
@@ -756,7 +786,7 @@ Here are some of the things you can do with Kong Manager:
 
 ![Kong Plugin Hub](images/kong48.png)
 
-### Plugins (Hands on)
+## Plugins (Hands on)
 
 <!--style="font-size:20px" -->
 **Setting Up Proxy Cache Plugin**
@@ -875,7 +905,7 @@ curl -X PATCH http://<admin-hostname>:8001/routes/mocking/plugins/{<plugin-id>} 
 ```
 
 
-### Custom Plugins PART - 1 (Hands on)
+## Custom Plugins PART - 1 (Hands on)
 
 <br>
 
@@ -998,7 +1028,7 @@ pongo lint
 
 
 
-### Custom Plugins PART - 2 (Hands on)
+## Custom Plugins PART - 2 (Hands on)
 
 <br>
 
@@ -1128,7 +1158,7 @@ http :8000/mock/anything Host:httpbin.org
 <!--style="color:green" -->"Hello-World": "this is on a request by custom plugin".
 
 
-## Enabling Monitoring in kong (OSS) with prometheus plugin and prometheus server (Hands on)
+# Enabling Monitoring in kong OSS with prometheus plugin and prometheus server - Hands on
 
 <br>
 
@@ -1196,24 +1226,24 @@ curl -s http://localhost:9090/api/v1/query?query=kong_node_info
 ```
 
 
-## Kong Vitals
+# Kong Vitals
 
 ![kong vitals](images/kong49.png)
 
 
-### Workspace
+## Workspace
 
 ![kong vitals](images/kong50.png)
 
 
-### Teams
+## Teams
 
 
 ![kong vitals](images/kong51.png)
 
 
 
-## OpenAPI
+# OpenAPI
 
 <br>
 
@@ -1225,112 +1255,112 @@ curl -s http://localhost:9090/api/v1/query?query=kong_node_info
 ![kong vitals](images/kong52.png)
 
 
-### History of OpenAPI
+## History of OpenAPI
 
 <br>
 
 ![kong vitals](images/kong53.png)
 
 
-### Open API specification Uses
+## Open API specification Uses
 
 <br>
 
 ![kong vitals](images/kong54.png)
 
 
-### Sample OpenAPI Document
+## Sample OpenAPI Document
 
 <br>
 
 ![kong vitals](images/kong55.png)
 
 
-### OpenAPI Document Format
+## OpenAPI Document Format
 
 <br>
 
 ![kong vitals](images/kong56.png)
 
 
-### OpenAPI Document: Openapi Section
+## OpenAPI Document: Openapi Section
 
 <br>
 
 ![kong vitals](images/kong57.png)
 
 
-### OpenAPI Document: Info Section
+## OpenAPI Document: Info Section
 
 <br>
 
 ![kong vitals](images/kong58.png)
 
 
-### OpenAPI Document: tags Section
+## OpenAPI Document: tags Section
 
 <br>
 
 ![kong vitals](images/kong59.png)
 
 
-### OpenAPI Document: paths Section
+## OpenAPI Document: paths Section
 
 <br>
 
 ![kong vitals](images/kong60.png)
 
 
-### OpenAPI Document: externalDocs Section
+## OpenAPI Document: externalDocs Section
 
 <br>
 
 ![kong vitals](images/kong61.png)
 
 
-### OpenAPI Document: servers Section
+## OpenAPI Document: servers Section
 
 <br>
 
 ![kong vitals](images/kong62.png)
 
 
-### OpenAPI Document: components Section
+## OpenAPI Document: components Section
 
 <br>
 
 ![kong vitals](images/kong63.png)
 
 
-## Insomnia
+# Insomnia
  
  <br>
 
 ![kong vitals](images/kong64.png)
 
 
-### Prerequisite
+## Prerequisite
 
 <br>
 
 ![kong vitals](images/kong65.png)
 
 
-### Insomnia Design Mode
+## Insomnia Design Mode
 
 <br>
 
 ![kong vitals](images/kong66.png)
 
 
-### Insomnia Debug Mode
+## Insomnia Debug Mode
 
 <br>
 
 ![kong vitals](images/kong67.png)
 
 
-### Insomnia Test Mode
+## Insomnia Test Mode
 
 <br>
 
@@ -1338,48 +1368,92 @@ curl -s http://localhost:9090/api/v1/query?query=kong_node_info
 
 <br>
 
-### Inso
+## Advantages
+
+<br>
+
+Insomnia is a popular open-source API testing tool that provides several advantages for developers and teams working on API-related projects. Here are some of the key advantages of using Insomnia:
+
+1. **User-Friendly Interface:**
+   - Insomnia has an intuitive and user-friendly interface, making it easy for both beginners and experienced developers to work with.
+
+2. **Cross-Platform Support:**
+   - Insomnia is available on multiple platforms, including Windows, macOS, and Linux, making it accessible to developers regardless of their operating system.
+
+3. **Flexible Request Building:**
+   - The tool allows users to create and send HTTP requests easily. It supports various HTTP methods, headers, and request parameters, providing flexibility in building and testing different types of requests.
+
+4. **Organized Workspace:**
+   - Insomnia allows users to organize their API requests into workspaces, helping keep projects and related API requests well-structured and easily manageable.
+
+5. **Environment Variables:**
+   - It supports the use of environment variables, enabling developers to define variables for different environments (e.g., development, testing, production). This is useful for testing APIs in various contexts.
+
+6. **Code Snippet Generation:**
+   - Insomnia can generate code snippets in various programming languages based on the API requests. This feature accelerates the integration of API calls into actual code implementations.
+
+7. **Response Validation and Visualization:**
+   - The tool provides features for validating API responses, including the ability to define assertions and inspect response data. It also offers a clean visualization of API responses.
+
+8. **Cookie Management:**
+   - Insomnia includes features for managing cookies, making it easy to test and validate APIs that rely on cookie-based authentication or sessions.
+
+9. **Export and Import:**
+   - Users can export and import their workspaces, making it convenient for collaboration and sharing API testing configurations across teams.
+
+10. **Extensibility with Plugins:**
+    - Insomnia supports plugins, allowing users to extend its functionality and integrate it with other tools or services.
+
+11. **Team Collaboration:**
+    - Insomnia provides collaboration features, including the ability to sync workspaces across team members. This helps teams collaborate efficiently on API development and testing.
+
+12. **Continuous Development and Updates:**
+    - As an open-source project, Insomnia is actively developed and updated, ensuring that users benefit from new features, bug fixes, and improvements over time.
+
+
+
+## Inso
 
 <br>
 
 ![kong vitals](images/kong69.png)
 
 
-## Imperative vs. Declarative
+# Imperative vs. Declarative
 
 <br>
 
 ![kong vitals](images/kong70.png)
 
-### Imperative Configuration
+## Imperative Configuration
 
 <br>
 
 ![kong vitals](images/kong71.png)
 
 
-### Declarative Configuration (decK)
+## Declarative Configuration (decK)
 
 <br>
 
 ![kong vitals](images/kong72.png)
 
 
-### decK Commands
+## decK Commands
 
 <br>
 
 ![kong vitals](images/kong73.png)
 
 
-### Working with decK
+## Working with decK
 
 <br>
 
 ![kong vitals](images/kong74.png)
 
 
-## Introduction to APIOps
+# Introduction to APIOps
 
 <br>
 
@@ -1394,9 +1468,33 @@ curl -s http://localhost:9090/api/v1/query?query=kong_node_info
 ![kong vitals](images/kong76.png)
 
 
-## Deploying API Gateway Within a CI/CD Pipeline
+# Deploying API Gateway Within a CI-CD Pipeline
 
 <br>
+
+Deploying Kong API Gateway within a CI/CD (Continuous Integration/Continuous Deployment) pipeline involves automating the process of building, testing, and deploying the Kong Gateway along with its configuration. Here's a general guide on how you can approach this using common CI/CD tools:
+
+<br>
+
+**Prerequisites:**
+
+Kong API Gateway: Ensure Kong is installed on your target environment.
+CI/CD Tool: Choose a CI/CD tool such as Jenkins, GitLab CI/CD, Travis CI, GitHub Actions, or others.
+Steps:
+
+1. **Version Control:** Store your Kong configurations (routes, services, plugins) in a version control system (e.g., Git).
+
+2. **CI Configuration:** Create a configuration file for your CI tool. For example, .gitlab-ci.yml for GitLab CI or Jenkinsfile for Jenkins.
+
+3. **Build and Test:** In the CI configuration, define a build step to fetch your Kong configuration files from version control. Validate the configuration files and perform any necessary tests.
+
+4. **Dockerize Kong:** Optionally, package Kong along with your configuration files into a Docker image. This makes it easier to deploy consistently across environments. Push the Docker image to a container registry (e.g., Docker Hub, AWS ECR).
+
+5. **Deploy to Staging Environment:** Deploy Kong to a staging environment using your CI/CD tool. Ensure that your Kong configurations are applied.
+
+6. **Run Integration Tests:** Perform integration tests to verify that Kong is correctly configured, and your APIs are accessible.
+
+7. **Promote to Production:** If tests pass in the staging environment, trigger a deployment to the production environment. Ensure that you use proper approvals and gates to control the promotion process.
 
 <!--style="font-size:20px" -->
 ReferenceLink:
@@ -1405,7 +1503,7 @@ ReferenceLink:
 https://konghq.com/blog/api-gateway-ci-cd-pipeline
 
 
-## References
+# References
 
 <!--style="font-size:25px" -->
 * https://docs.konghq.com/gateway/latest/
